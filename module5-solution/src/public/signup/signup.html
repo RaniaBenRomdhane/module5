@@ -50,9 +50,10 @@
         <br><br>
 
         <button
-        ng-disabled="signupForm.$invalid || signupForm.$error.required"
+        ng-disabled="signupForm.$invalid || signupForm.$error.required ||signupForm.$error.maxlength"
         ng-click="signupCtrl.submit();">Submit</button>
-        <h3 class="Info" >{{signupCtrl.msg}} </h3>
+        <h3 class="msg" ng-show="signupCtrl.error" >No such menu number exists ! </h3>
+        <h3 class="msg" ng-show="signupCtrl.registred" >Your information has been saved </h3>
 
   </form>
 
