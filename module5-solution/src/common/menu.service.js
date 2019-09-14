@@ -52,50 +52,12 @@ function MenuService($http, ApiPath) {
     .then(function (response) {
       service.name=response.data.name;
       service.description=response.data.description;
-      console.log("Good");
-      service.msg = "Your information has been saved :)";
-      console.log(service.msg);
-    })
-  .catch(function(error){
-    console.log("nono!");
-    service.msg = "No such menu number exists !";
-    console.log(service.msg);
-  });
+      });
   };
   /*----retrieving info ----*/
   service.title=function () { return service.name; };
   service.desc=function () { return service.description; };
-  service.message=function () { return service.msg; };
-
-
-/*---------------- TEST ------------------------------------------------------------*/
-/*var found=[];
-service.foundCategories=function(shortName){
-   $http({
-    method : "GET",
-    url : ApiPath + '/categories.json'
-  }).then(function(response){
-    for (var i =0 ; i<(response.data).length;i++){
-      found.push(response.data[i].short_name);
-      console.log(response.data[i].short_name);}
-    }
-
-    return $http({
-      method :"GET",
-      url : (ApiPath + '/menu_items.json'),
-      params :{
-        category : shortName
-      }
-    })
-    .then(function (response) {
-      console.log("good");
-      return response;
-    })
-  .catch(function(error){
-    console.log("wrong!");
-  });
-
-};*/
+ 
 
 }
 })();
