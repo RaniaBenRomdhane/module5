@@ -39,7 +39,7 @@
         class="blackfont">
 
         <span ng-if="signupForm.phone.$error.maxlength
-                    || signupForm.phone.$touched">
+                    || (signupForm.phone.$error.maxlength &&signupForm.phone.$touched)">
         Phone number must be 9 digits long
         </span>
         <br><br>
