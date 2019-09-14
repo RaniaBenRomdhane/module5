@@ -16,8 +16,13 @@ function SignupController(MenuService) {
     MenuService.email= signupCtrl.user.emailAdress;
     MenuService.phone= signupCtrl.user.phoneNumber;
     MenuService.shName=signupCtrl.shortName;
-    signupCtrl.item=MenuService.getItem(signupCtrl.shortName);
-    signupCtrl.msg=MenuService.message();
+    var promise = MenuService.getItem(signupCtrl.shortName);
+    promise.then(function(result){
+      signupCtrl.registred =true;
+    }).
+    catch(function (error) {
+      signupCtrl.error =true;
+    });
     }
 }
 
