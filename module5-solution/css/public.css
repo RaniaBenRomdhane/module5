@@ -198,3 +198,9 @@ h3.menu-item-title {
   font-weight: bold;
   color : rgb(255,192,0);
 }
+
+.msg{
+  text-decoration: none;
+  font-weight: bold;
+  color : rgb(204,0,68);
+}
