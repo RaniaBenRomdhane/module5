@@ -1,6 +1,6 @@
 <div class="container">
   <div class="center">
-  <div ng-if="myinfoCtrl.firstName">
+  <div ng-if="myinfoCtrl.title">
     <h2 class="Info">YOUR REGISTRED INFORMATION</h2>
       Your first name : {{myinfoCtrl.firstName}} <br>
       Your last name :{{myinfoCtrl.lastName}} <br>
@@ -23,7 +23,7 @@
         <hr class="visible-xs">
       </div>
   </div>
-  <div ng-if="!myinfoCtrl.firstName">
+  <div ng-if="!myinfoCtrl.title">
   <h2><a ui-sref="public.signup" class="Info">Not Signed Up Yet. Sign up Now!</a></h2>
   </div>
 
