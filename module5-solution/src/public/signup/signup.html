@@ -33,15 +33,14 @@
         Must enter a valid adress : adress@domain format
         </span>
         <br><br>
-        <input type="phone" name="phone" placeholder="PhoneNumber ###-###-####"
+        <input type="phone" name="phone" placeholder="enter your phone number"
         ng-model="signupCtrl.user.phoneNumber"
-        pattern="(\d{3})-(\d{3})-(\d{4})"
-        required
+        ng-maxlength="9"
         class="blackfont">
 
-        <span ng-if="signupForm.phone.$invalid
-                    && signupForm.phone.$touched">
-        Phone must be in the format ###-###-####
+        <span ng-if="signupForm.phone.$error.maxlength
+                    || signupForm.phone.$touched">
+        Phone number must be 9 digits long
         </span>
         <br><br>
         <input type="favoriteDish" name="favoriteDish" placeholder="enter your favorite dish"
@@ -50,7 +49,6 @@
         class="blackfont">{{signupCtrl.shortName}}
         <br><br>
 
-<!--ui-sref="public.menuitems({category: signupCtrl.shortName})"-->
         <button
         ng-disabled="signupForm.$invalid || signupForm.$error.required"
         ng-click="signupCtrl.submit();">Submit</button>
