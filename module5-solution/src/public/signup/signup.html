@@ -1,0 +1,63 @@
+<div class="center">
+
+  <h1 class="Info"> Registration </h1>
+
+
+    <form name="signupForm" novalidate>
+         <input type="text" name="firstName" placeholder="enter your first name"
+          ng-model="signupCtrl.user.firstName"
+          required
+          class="blackfont"> {{signupCtrl.user.firstName}}
+
+          <span ng-if="signupForm.firstName.$error.required
+                      && signupForm.firstName.$touched">
+          This field is required
+          </span>
+        <br><br>
+        <input type="text" name="lastName" placeholder="enter your last name"
+        ng-model="signupCtrl.user.lastName"
+        required
+        class="blackfont"> {{signupCtrl.user.lastName}}
+
+        <span ng-if="signupForm.lastName.$error.required
+                    && signupForm.lastName.$touched">
+        This field is required
+        </span>
+        <br><br>
+        <input type="email" name="email" placeholder="adress@domain"
+        ng-model="signupCtrl.user.emailAdress"
+        required
+        class="blackfont">
+        <span ng-if="signupForm.email.$invalid
+                    && signupForm.email.$touched">
+        Must enter a valid adress : adress@domain format
+        </span>
+        <br><br>
+        <input type="phone" name="phone" placeholder="PhoneNumber ###-###-####"
+        ng-model="signupCtrl.user.phoneNumber"
+        pattern="(\d{3})-(\d{3})-(\d{4})"
+        required
+        class="blackfont">
+
+        <span ng-if="signupForm.phone.$invalid
+                    && signupForm.phone.$touched">
+        Phone must be in the format ###-###-####
+        </span>
+        <br><br>
+        <input type="favoriteDish" name="favoriteDish" placeholder="enter your favorite dish"
+        ng-model="signupCtrl.shortName"
+        required
+        class="blackfont">{{signupCtrl.shortName}}
+        <br><br>
+
+<!--ui-sref="public.menuitems({category: signupCtrl.shortName})"-->
+        <button
+        ng-disabled="signupForm.$invalid || signupForm.$error.required"
+        ng-click="signupCtrl.submit();">Submit</button>
+        <h3 class="Info" >{{signupCtrl.msg}} </h3>
+
+  </form>
+
+
+
+</div>
